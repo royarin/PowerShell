@@ -13,7 +13,11 @@ function DeleteSiteCollection($siteColl) {
     Write-Host -ForegroundColor Yellow "Processing $siteColl"
 
     Remove-SPOSite $siteColl -Confirm
+    Write-Host -ForegroundColor Green "$siteColl deleted!!"
+
     Remove-SPODeletedSite $siteColl -Confirm
+    Write-Host -ForegroundColor Green "$siteColl deleted from Recycle Bin!!"
+    
 }
 
 
